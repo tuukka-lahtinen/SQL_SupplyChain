@@ -2,8 +2,7 @@
 
 SQL-based analysis of order fulfillment, delivery performance, and profitability
 using the DataCo Smart Supply Chain dataset. Built with PostgreSQL, focused on
-identifying operational issues that a business would actually need to act on,
-not just descriptive reporting.
+identifying operational issues.
 
 ## Dataset
 
