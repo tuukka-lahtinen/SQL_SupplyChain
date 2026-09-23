@@ -2,7 +2,7 @@
 -- Rajattu 2017-09 asti: loka 2017 - tammi 2018 näyttää äkillisen,
 -- tasomaisen pudotuksen tilausmäärässä (n. 5200 -> 2100/kk),
 -- todennäköisesti datan keräyksen katkos eikä aito myynnin lasku.
--- Ks. README kohta "Data quality notes".
+
 WITH monthly AS (
     SELECT
         DATE_TRUNC('month', order_date)::DATE AS month,
