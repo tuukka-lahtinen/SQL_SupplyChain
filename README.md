@@ -27,6 +27,10 @@ Monthly sales are flat around 1-1.1M from 2015 to Sept 2017, then drop by more t
 
 sales column always equals quantity x price exactly. Discounts show up in order_item_total, not in sales.
 
+![Late delivery by shipping mode](visuals/late_delivery_by_mode.png)
+
+![Monthly sales trend](visuals/monthly_sales_trend.png)
+
 ## Notes
 
 Left out PII columns (email, password, names, street address) and empty columns (product image, description) from the fact table.
