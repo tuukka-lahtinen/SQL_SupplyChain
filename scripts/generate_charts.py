@@ -48,5 +48,27 @@ plt.tight_layout()
 plt.savefig("visuals/monthly_sales_trend.png")
 plt.close()
 
+# top category by total sales, average margin
+df3 = pd.read_sql(
+    """
+    SELECT category_name, ROUND(AVG(order_item_profit_ratio) * 100, 2) AS avg_margin_pct
+    FROM fact_orders
+    WHERE order_date < '2017-10-01'
+    GROUP BY category_name
+    ORDER BY avg_margin_pct DESC
+    LIMIT 10
+""",
+    conn,
+)
+
+plt.figure(figsize=(8, 6))
+plt.barh(df3["category_name"], df3["avg_margin_pct"])
+plt.xlabel("Average margin %")
+plt.title("Top 10 categories by average margin")
+plt.gca().invert_yaxis()
+plt.tight_layout()
+plt.savefig("visuals/top_categories_by_margin.png")
+plt.close()
+
 conn.close()
 print("done")
